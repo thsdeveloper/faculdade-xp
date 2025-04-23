@@ -1,4 +1,5 @@
 import {Button} from "@/components/ui/button";
+import Image from 'next/image'
 
 interface CourseCardProps {
     title: string;
@@ -11,7 +12,7 @@ export default function CourseCard({title, image}: CourseCardProps) {
             <div className="rounded-xl overflow-hidden group relative shadow transition">
                 {/* Imagem */}
                 <div className="relative">
-                    <img
+                    <Image
                         src={image}
                         alt={title}
                         className="w-full h-45 object-cover transition-transform duration-300 group-hover:scale-105"

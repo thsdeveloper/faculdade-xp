@@ -1,18 +1,41 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import CourseSection from "@/components/CourseSection/CourseSection";
+import CourseSection, { Course } from "@/components/CourseSection/CourseSection";
 
-interface Props {
-    params: { slug: string };
+// ISR - revalidação a cada 60s
+export const revalidate = 60;
+
+// Permite gerar páginas dinamicamente via fallback
+export const dynamicParams = true;
+
+type Props = {
+    params: {
+        slug: string;
+    };
+};
+
+// Geração estática de alguns slugs durante o build
+export async function generateStaticParams() {
+    const res = await fetch("http://localhost:3000/data/courses.json");
+    const data = await res.json();
+    const allCourses: Course[] = [...data.fastLearning, ...data.duplaCertificacao];
+
+    return allCourses.map((course) => ({
+        slug: course.slug,
+    }));
 }
 
-export default async function CourseDetailsPage({ params }: Props) {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/data/courses.json`);
-    const data = await res.json();
+// Página de detalhes
+export default async function Page({ params }: Props) {
+    const { slug } = params;
 
+    const res = await fetch("http://localhost:3000/data/courses.json", {
+        next: { revalidate: 60 },
+    });
+    const data = await res.json();
     const allCourses = [...data.fastLearning, ...data.duplaCertificacao];
-    const course = allCourses.find((c) => c.slug === params.slug);
+    const course = allCourses.find((c) => c.slug === slug);
 
     if (!course) return notFound();
 
@@ -29,13 +52,15 @@ export default async function CourseDetailsPage({ params }: Props) {
                 />
                 <div className="relative z-10 max-w-5xl mx-auto px-6">
                     <h1 className="text-4xl md:text-5xl font-bold mb-4">{course.title}</h1>
-                    <p className="text-md md:text-lg text-muted-foreground max-w-xl">{course.description}</p>
+                    <p className="text-md md:text-lg text-muted-foreground max-w-xl">
+                        {course.description}
+                    </p>
                     <Button className="mt-6">Matricule-se agora</Button>
                 </div>
             </section>
 
-            {/* INFO DETALHADA */}
-            <section className="max-w-screen-2xl mx-auto w-full mt-8">
+            {/* INFORMAÇÕES */}
+            <section className="max-w-screen-2xl mx-auto w-full mt-8 px-4">
                 <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-4">
                         <h2 className="text-xl font-semibold text-lime-400">Informações do curso</h2>
@@ -50,11 +75,13 @@ export default async function CourseDetailsPage({ params }: Props) {
                     <div className="space-y-4">
                         <h2 className="text-xl font-semibold text-lime-400">Para quem é esse curso?</h2>
                         <p className="text-sm text-gray-300">
-                            Profissionais que desejam se atualizar no mercado de tecnologia, gestão de projetos ou produtos, com foco em inovação e transformação digital.
+                            Profissionais que desejam se atualizar no mercado de tecnologia, gestão de projetos ou
+                            produtos, com foco em inovação e transformação digital.
                         </p>
                         <h2 className="text-xl font-semibold text-lime-400 mt-6">Metodologia</h2>
                         <p className="text-sm text-gray-300">
-                            Aulas dinâmicas, com foco em prática de mercado, projetos reais, mentorias com especialistas e acesso a uma plataforma exclusiva de aprendizado contínuo.
+                            Aulas dinâmicas, com foco em prática de mercado, projetos reais, mentorias com especialistas
+                            e acesso a uma plataforma exclusiva de aprendizado contínuo.
                         </p>
                     </div>
                 </div>

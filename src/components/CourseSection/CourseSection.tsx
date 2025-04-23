@@ -7,7 +7,7 @@ import {ArrowRight, ArrowLeft} from "lucide-react";
 import CourseSkeletonCard from "@/components/CourseSkeletonCard/CourseSkeletonCard";
 import Link from "next/link";
 
-interface Course {
+export interface Course {
     title: string;
     image: string;
     slug: string;

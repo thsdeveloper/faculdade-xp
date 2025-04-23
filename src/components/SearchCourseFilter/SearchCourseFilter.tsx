@@ -83,7 +83,7 @@ export default function SearchCourseFilter() {
             instanceRef.current.update();
             instanceRef.current.moveToIdx(0);
         }
-    }, [filteredCourses.length]);
+    }, [filteredCourses.length, instanceRef]);
 
     return (
         <section className="py-10 text-white container px-4 space-y-6">
