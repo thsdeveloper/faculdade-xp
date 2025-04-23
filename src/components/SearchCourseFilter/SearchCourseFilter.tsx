@@ -87,8 +87,9 @@ export default function SearchCourseFilter() {
 
     return (
         <section className="py-10 text-white container px-4 space-y-6">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:flex gap-4 items-start md:items-end flex-wrap">
-                <div className="relative w-full max-w-md">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
+                {/* Campo de busca */}
+                <div className="relative col-span-full lg:col-span-1">
                     <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground w-4 h-4"/>
                     <Input
                         placeholder="Pesquisar cursos..."
@@ -98,42 +99,51 @@ export default function SearchCourseFilter() {
                     />
                 </div>
 
-                <Select value={duration} onValueChange={setDuration}>
-                    <SelectTrigger className="w-full md:w-52">
-                        <SelectValue placeholder="Filtrar por duração"/>
-                    </SelectTrigger>
-                    <SelectContent>
-                        <SelectItem value="6 meses">6 meses</SelectItem>
-                        <SelectItem value="7 meses">7 meses</SelectItem>
-                        <SelectItem value="8 meses">8 meses</SelectItem>
-                        <SelectItem value="9 meses">9 meses</SelectItem>
-                        <SelectItem value="10 meses">10 meses</SelectItem>
-                        <SelectItem value="12 meses">12 meses</SelectItem>
-                    </SelectContent>
-                </Select>
+                {/* Filtro por duração */}
+                <div className="w-full">
+                    <Select value={duration} onValueChange={setDuration}>
+                        <SelectTrigger className="w-full">
+                            <SelectValue placeholder="Filtrar por duração"/>
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectItem value="6 meses">6 meses</SelectItem>
+                            <SelectItem value="7 meses">7 meses</SelectItem>
+                            <SelectItem value="8 meses">8 meses</SelectItem>
+                            <SelectItem value="9 meses">9 meses</SelectItem>
+                            <SelectItem value="10 meses">10 meses</SelectItem>
+                            <SelectItem value="12 meses">12 meses</SelectItem>
+                        </SelectContent>
+                    </Select>
+                </div>
 
-                <Select value={level} onValueChange={setLevel}>
-                    <SelectTrigger className="w-full md:w-52">
-                        <SelectValue placeholder="Filtrar por nível"/>
-                    </SelectTrigger>
-                    <SelectContent>
-                        <SelectItem value="Intermediário">Intermediário</SelectItem>
-                        <SelectItem value="Avançado">Avançado</SelectItem>
-                    </SelectContent>
-                </Select>
+                {/* Filtro por nível */}
+                <div className="w-full">
+                    <Select value={level} onValueChange={setLevel}>
+                        <SelectTrigger className="w-full">
+                            <SelectValue placeholder="Filtrar por nível"/>
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectItem value="Intermediário">Intermediário</SelectItem>
+                            <SelectItem value="Avançado">Avançado</SelectItem>
+                        </SelectContent>
+                    </Select>
+                </div>
 
-                <Button
-                    variant="ghost"
-                    className="text-sm text-muted-foreground underline-offset-4 hover:underline md:ml-auto"
-                    onClick={() => {
-                        setQuery("");
-                        setDuration("");
-                        setLevel("");
-                    }}
-                >
-                    Limpar filtros
-                </Button>
+                <div className="w-full flex lg:justify-end">
+                    <Button
+                        variant="ghost"
+                        className="text-sm text-muted-foreground underline-offset-4 hover:underline"
+                        onClick={() => {
+                            setQuery("");
+                            setDuration("");
+                            setLevel("");
+                        }}
+                    >
+                        Limpar filtros
+                    </Button>
+                </div>
             </div>
+
 
             {courses === null ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
@@ -145,6 +155,27 @@ export default function SearchCourseFilter() {
                 <p className="text-sm text-muted-foreground">Nenhum curso encontrado com os filtros aplicados.</p>
             ) : (
                 <div className="relative">
+                    {loaded && instanceRef.current && (
+                        <>
+                            {/* Seta Esquerda */}
+                            <button
+                                onClick={() => instanceRef.current?.prev()}
+                                disabled={currentSlide === 0}
+                                className="absolute left-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white text-black flex items-center justify-center shadow hover:bg-lime-400 transition disabled:opacity-30"
+                            >
+                                <ArrowLeft className="w-4 h-4" />
+                            </button>
+
+                            {/* Seta Direita */}
+                            <button
+                                onClick={() => instanceRef.current?.next()}
+                                disabled={currentSlide >= filteredCourses.length - 4}
+                                className="absolute right-2 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white text-black flex items-center justify-center shadow hover:bg-lime-400 transition disabled:opacity-30"
+                            >
+                                <ArrowRight className="w-4 h-4" />
+                            </button>
+                        </>
+                    )}
                     <div ref={sliderRef}
                          className="keen-slider"
                          key={filteredCourses.map((c) => c.slug).join("-")}>
@@ -156,27 +187,6 @@ export default function SearchCourseFilter() {
                             </div>
                         ))}
                     </div>
-
-                    {loaded && instanceRef.current && (
-                        <div className="absolute right-4 top-1/2 -translate-y-1/2 flex gap-2 z-10">
-                            <button
-                                onClick={() => instanceRef.current?.prev()}
-                                disabled={currentSlide === 0}
-                                className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center shadow hover:bg-lime-400 transition disabled:opacity-30"
-                            >
-                                <ArrowLeft className="w-4 h-4"/>
-                            </button>
-                            <button
-                                onClick={() => instanceRef.current?.next()}
-                                disabled={
-                                    currentSlide >= filteredCourses.length - 4
-                                }
-                                className="w-8 h-8 rounded-full bg-white text-black flex items-center justify-center shadow hover:bg-lime-400 transition disabled:opacity-30"
-                            >
-                                <ArrowRight className="w-4 h-4"/>
-                            </button>
-                        </div>
-                    )}
                 </div>
             )}
         </section>
