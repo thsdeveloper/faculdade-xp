@@ -60,7 +60,7 @@ export default function SearchCourseFilter() {
     useEffect(() => {
         const fetchCourses = async () => {
             await new Promise((resolve) => setTimeout(resolve, 3000)); // Simula loading
-            const res = await fetch("/data/courses.json");
+            const res = await fetch("https://raw.githubusercontent.com/thsdeveloper/faculdade-xp/main/public/data/courses.json");
             const data = await res.json();
             const all = [...data.fastLearning, ...data.duplaCertificacao];
             setCourses(all);

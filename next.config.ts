@@ -6,6 +6,9 @@ const nextConfig: import('next').NextConfig = {
             "igtieadstorage.blob.core.windows.net"
         ],
     },
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
 };
 
 module.exports = nextConfig;

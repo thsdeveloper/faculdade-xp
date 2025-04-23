@@ -50,7 +50,7 @@ export default function CourseSection({title, queryKey}: CourseSectionProps) {
     useEffect(() => {
         const fetchCourses = async () => {
             await new Promise((resolve) => setTimeout(resolve, 3000));
-            const res = await fetch("/data/courses.json");
+            const res = await fetch("https://raw.githubusercontent.com/thsdeveloper/faculdade-xp/main/public/data/courses.json");
             const data = await res.json();
             setCourses(data[queryKey]);
         };

@@ -9,15 +9,12 @@ export const revalidate = 60;
 // Permite gerar páginas dinamicamente via fallback
 export const dynamicParams = true;
 
-type Props = {
-    params: {
-        slug: string;
-    };
-};
+type tParams = Promise<{ slug: string[] }>;
+
 
 // Geração estática de alguns slugs durante o build
 export async function generateStaticParams() {
-    const res = await fetch("http://localhost:3000/data/courses.json");
+    const res = await fetch("https://raw.githubusercontent.com/thsdeveloper/faculdade-xp/main/public/data/courses.json");
     const data = await res.json();
     const allCourses: Course[] = [...data.fastLearning, ...data.duplaCertificacao];
 
@@ -27,12 +24,13 @@ export async function generateStaticParams() {
 }
 
 // Página de detalhes
-export default async function Page({ params }: Props) {
-    const { slug } = params;
+export default async function Challenge(props: { params: tParams }) {
+    const { slug } = await props.params;
 
-    const res = await fetch("http://localhost:3000/data/courses.json", {
+    const res = await fetch("https://raw.githubusercontent.com/thsdeveloper/faculdade-xp/main/public/data/courses.json", {
         next: { revalidate: 60 },
     });
+    
     const data = await res.json();
     const allCourses = [...data.fastLearning, ...data.duplaCertificacao];
     const course = allCourses.find((c) => c.slug === slug);
