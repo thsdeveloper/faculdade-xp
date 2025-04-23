@@ -1,0 +1,110 @@
+{
+  "fastLearning": [
+    {
+      "slug": "agile-project-management",
+      "title": "Agile - Project & Product Management",
+      "description": "Domine metodologias ágeis para liderar projetos e produtos digitais com eficiência.",
+      "duration": "6 meses",
+      "level": "Intermediário",
+      "image": "https://xpe.edu.br/_next/image?url=https%3A%2F%2Figtieadstorage.blob.core.windows.net%2Frepositorio-imagens%2FPROMOTIONAL_IMAGE_Cloud_Computing_com_Inteligencia_Artificial_-_v2_f2aeff9e-0bec-4e09-bdb0-fcf077cf9d99.png&w=384&q=75"
+    },
+    {
+      "slug": "analise-dados-bi",
+      "title": "Análise de Dados e Business Intelligence",
+      "description": "Aprenda a coletar, transformar e visualizar dados para tomada de decisão estratégica.",
+      "duration": "8 meses",
+      "level": "Avançado",
+      "image": "https://xpe.edu.br/_next/image?url=https%3A%2F%2Figtieadstorage.blob.core.windows.net%2Frepositorio-imagens%2FPROMOTIONAL_IMAGE_Cloud_Computing_com_Inteligencia_Artificial_-_v2_f2aeff9e-0bec-4e09-bdb0-fcf077cf9d99.png&w=384&q=75"
+    },
+    {
+      "slug": "inteligencia-artificial-ml",
+      "title": "Inteligência Artificial com Machine Learning",
+      "description": "Implemente soluções com IA e machine learning aplicadas ao mercado.",
+      "duration": "7 meses",
+      "level": "Intermediário",
+      "image": "https://xpe.edu.br/_next/image?url=https%3A%2F%2Figtieadstorage.blob.core.windows.net%2Frepositorio-imagens%2FPROMOTIONAL_IMAGE_Cloud_Computing_com_Inteligencia_Artificial_-_v2_f2aeff9e-0bec-4e09-bdb0-fcf077cf9d99.png&w=384&q=75"
+    },
+    {
+      "slug": "mba-inteligencia-artificial",
+      "title": "MBA - Inteligência Artificial",
+      "description": "Aprofunde-se nas principais técnicas de IA com uma visão estratégica.",
+      "duration": "12 meses",
+      "level": "Avançado",
+      "image": "https://xpe.edu.br/_next/image?url=https%3A%2F%2Figtieadstorage.blob.core.windows.net%2Frepositorio-imagens%2FPROMOTIONAL_IMAGE_Cloud_Computing_com_Inteligencia_Artificial_-_v2_f2aeff9e-0bec-4e09-bdb0-fcf077cf9d99.png&w=384&q=75"
+    },
+    {
+      "slug": "mba-inteligencia-artificial",
+      "title": "MBA - Inteligência Artificial",
+      "description": "Aprofunde-se nas principais técnicas de IA com uma visão estratégica.",
+      "duration": "12 meses",
+      "level": "Avançado",
+      "image": "https://xpe.edu.br/_next/image?url=https%3A%2F%2Figtieadstorage.blob.core.windows.net%2Frepositorio-imagens%2FPROMOTIONAL_IMAGE_Cloud_Computing_com_Inteligencia_Artificial_-_v2_f2aeff9e-0bec-4e09-bdb0-fcf077cf9d99.png&w=384&q=75"
+    },
+    {
+      "slug": "mba-inteligencia-artificial",
+      "title": "MBA - Inteligência Artificial",
+      "description": "Aprofunde-se nas principais técnicas de IA com uma visão estratégica.",
+      "duration": "12 meses",
+      "level": "Avançado",
+      "image": "https://xpe.edu.br/_next/image?url=https%3A%2F%2Figtieadstorage.blob.core.windows.net%2Frepositorio-imagens%2FPROMOTIONAL_IMAGE_Cloud_Computing_com_Inteligencia_Artificial_-_v2_f2aeff9e-0bec-4e09-bdb0-fcf077cf9d99.png&w=384&q=75"
+    }
+  ],
+  "duplaCertificacao": [
+    {
+      "slug": "ciencia-dados-mercado-financeiro",
+      "title": "Ciência de Dados Para o Mercado Financeiro com Inteligência Artificial",
+      "description": "Use IA para prever tendências e analisar dados no mercado financeiro.",
+      "duration": "10 meses",
+      "level": "Avançado",
+      "image": "https://xpe.edu.br/_next/image?url=https%3A%2F%2Figtieadstorage.blob.core.windows.net%2Frepositorio-imagens%2FPROMOTIONAL_IMAGE_Ciencia_de_Dados_Para_o_Mercado_Financeiro_com_Inteligencia_Artificial_-_v2_3efe1094-ea5b-4c4d-a119-cadd4f5b437a.png&w=384&q=75"
+    },
+    {
+      "slug": "cloud-computing-ia",
+      "title": "Cloud Computing com Inteligência Artificial",
+      "description": "Implemente arquiteturas de nuvem com algoritmos inteligentes.",
+      "duration": "9 meses",
+      "level": "Intermediário",
+      "image": "https://xpe.edu.br/_next/image?url=https%3A%2F%2Figtieadstorage.blob.core.windows.net%2Frepositorio-imagens%2FPROMOTIONAL_IMAGE_Ciencia_de_Dados_Para_o_Mercado_Financeiro_com_Inteligencia_Artificial_-_v2_3efe1094-ea5b-4c4d-a119-cadd4f5b437a.png&w=384&q=75"
+    },
+    {
+      "slug": "data-science-ia",
+      "title": "Data Science com Inteligência Artificial",
+      "description": "Combine estatística, programação e IA para gerar insights com dados.",
+      "duration": "8 meses",
+      "level": "Intermediário",
+      "image": "https://xpe.edu.br/_next/image?url=https%3A%2F%2Figtieadstorage.blob.core.windows.net%2Frepositorio-imagens%2FPROMOTIONAL_IMAGE_Ciencia_de_Dados_Para_o_Mercado_Financeiro_com_Inteligencia_Artificial_-_v2_3efe1094-ea5b-4c4d-a119-cadd4f5b437a.png&w=384&q=75"
+    },
+    {
+      "slug": "engenharia-arquitetura-dados-ia",
+      "title": "Engenharia e Arquitetura de Dados com Inteligência Artificial",
+      "description": "Crie pipelines e soluções robustas de dados com foco em IA.",
+      "duration": "12 meses",
+      "level": "Avançado",
+      "image": "https://xpe.edu.br/_next/image?url=https%3A%2F%2Figtieadstorage.blob.core.windows.net%2Frepositorio-imagens%2FPROMOTIONAL_IMAGE_Ciencia_de_Dados_Para_o_Mercado_Financeiro_com_Inteligencia_Artificial_-_v2_3efe1094-ea5b-4c4d-a119-cadd4f5b437a.png&w=384&q=75"
+    },
+    {
+      "slug": "engenharia-arquitetura-dados-ia",
+      "title": "Engenharia e Arquitetura de Dados com Inteligência Artificial",
+      "description": "Crie pipelines e soluções robustas de dados com foco em IA.",
+      "duration": "12 meses",
+      "level": "Avançado",
+      "image": "https://xpe.edu.br/_next/image?url=https%3A%2F%2Figtieadstorage.blob.core.windows.net%2Frepositorio-imagens%2FPROMOTIONAL_IMAGE_Ciencia_de_Dados_Para_o_Mercado_Financeiro_com_Inteligencia_Artificial_-_v2_3efe1094-ea5b-4c4d-a119-cadd4f5b437a.png&w=384&q=75"
+    },
+    {
+      "slug": "engenharia-arquitetura-dados-ia",
+      "title": "Engenharia e Arquitetura de Dados com Inteligência Artificial",
+      "description": "Crie pipelines e soluções robustas de dados com foco em IA.",
+      "duration": "12 meses",
+      "level": "Avançado",
+      "image": "https://xpe.edu.br/_next/image?url=https%3A%2F%2Figtieadstorage.blob.core.windows.net%2Frepositorio-imagens%2FPROMOTIONAL_IMAGE_Ciencia_de_Dados_Para_o_Mercado_Financeiro_com_Inteligencia_Artificial_-_v2_3efe1094-ea5b-4c4d-a119-cadd4f5b437a.png&w=384&q=75"
+    },
+    {
+      "slug": "engenharia-arquitetura-dados-ia",
+      "title": "Engenharia e Arquitetura de Dados com Inteligência Artificial",
+      "description": "Crie pipelines e soluções robustas de dados com foco em IA.",
+      "duration": "12 meses",
+      "level": "Avançado",
+      "image": "https://xpe.edu.br/_next/image?url=https%3A%2F%2Figtieadstorage.blob.core.windows.net%2Frepositorio-imagens%2FPROMOTIONAL_IMAGE_Ciencia_de_Dados_Para_o_Mercado_Financeiro_com_Inteligencia_Artificial_-_v2_3efe1094-ea5b-4c4d-a119-cadd4f5b437a.png&w=384&q=75"
+    }
+  ]
+}

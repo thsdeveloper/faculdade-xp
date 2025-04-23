@@ -1,7 +1,11 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig: import('next').NextConfig = {
+    images: {
+        domains: [
+            "xpe.edu.br",
+            "igtieadstorage.blob.core.windows.net"
+        ],
+    },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
